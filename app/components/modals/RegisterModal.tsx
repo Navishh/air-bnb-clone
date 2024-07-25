@@ -98,7 +98,6 @@ const RegisterModal = () => {
             onClick={registerModal.onClose}
             className="cursor-pointer text-neutral-600 hover:text-blue-600"
           >
-            {" "}
             Log in
           </div>
         </div>
