@@ -21,9 +21,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             <Logo />
             <Search />
             <UserMenu currentUser={currentUser} />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
+      <Categories />
       <Categories />
     </div>
   );
