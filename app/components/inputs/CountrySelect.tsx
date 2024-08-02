@@ -40,6 +40,20 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
             </div>
           </div>
         )}
+        classNames={{
+          control: () => "p-3 border-2",
+          input: () => "text-lg",
+          option: () => "text-lg font-semibold",
+        }}
+        theme={(theme) => ({
+          ...theme,
+          borderRadius: 6,
+          colors: {
+            ...theme.colors,
+            primary: "#252525",
+            primary25: "#ffe4e6",
+          },
+        })}
       />
     </div>
   );
