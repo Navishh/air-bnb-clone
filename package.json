@@ -15,6 +15,7 @@
     "bcrypt": "^5.1.1",
     "leaflet": "^1.9.4",
     "next": "14.2.5",
+    "next-cloudinary": "^6.9.0",
     "query": "^0.2.0",
     "query-string": "^9.1.0",
     "react": "^18",
