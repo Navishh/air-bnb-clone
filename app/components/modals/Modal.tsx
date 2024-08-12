@@ -75,7 +75,7 @@ const Modal: React.FC<ModalProps> = ({
               ${showModal ? "translate-y-0" : "translate-y-full"} 
               ${showModal ? "opacity-100" : "opacity-0"}`}
           >
-            <div className="relative flex flex-col w-full h-full bg-white border-0 rounded-lg shadow-lg outline-none translate lg:h-automd:h-auto focus:outline-none">
+            <div className="relative flex flex-col w-full h-full bg-white border-0 rounded-lg shadow-lg outline-none translate lg:h-auto md:h-auto focus:outline-none">
               {/*HEADER*/}
 
               <div className="flex items-center p-6 rounded-t  justify-center relative border-b-[1px]">
