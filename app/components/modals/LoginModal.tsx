@@ -44,7 +44,11 @@ const LoginModal = () => {
       //if loged in
       if (callback?.ok) {
         toast.success("Logged in successfully");
+        router.push("/");
+        // console.log("\n\n\nCallback ok?", callback);
         router.refresh();
+        // console.log("\n\n\nAfter refresh");
+        // window.location.reload();
         loginModal.onClose();
       }
 
