@@ -44,7 +44,7 @@ const LoginModal = () => {
       //if loged in
       if (callback?.ok) {
         toast.success("Logged in successfully");
-        router.push("/");
+        // router.push("/");
         // console.log("\n\n\nCallback ok?", callback);
         router.refresh();
         // console.log("\n\n\nAfter refresh");
@@ -59,6 +59,30 @@ const LoginModal = () => {
     });
   };
 
+  // const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  //   setIsLoading(true);
+
+  //   signIn("credentials", {
+  //     ...data,
+  //     redirect: false,
+  //   }).then((callback) => {
+  //     setIsLoading(false);
+
+  //     // Check if logged in successfully
+  //     if (callback?.ok) {
+  //       toast.success("Logged in successfully");
+  //       // router.push(router.pathname); // Refresh the page
+  //       // router.push("");
+  //       loginModal.onClose();
+  //     }
+
+  //     // Check if there was an error
+  //     if (callback?.error) {
+  //       toast.error(callback.error);
+  //     }
+  //   });
+  // };
+
   const toggle = useCallback(() => {
     loginModal.onClose();
     registerModal.onOpen();
@@ -66,7 +90,7 @@ const LoginModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4 ">
-      <Heading title="Welcome to Airbnb" subtitle=" Create an account" />
+      <Heading title="Welcome back" subtitle=" Log into your account" />
       <Input
         id="email"
         label="Email"
@@ -95,13 +119,13 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
         label="Continue with GitHub"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn("github")}
       />
       <div className="mt-4 font-light text-center text-neutral-500">
         <div className="flex flex-row items-center justify-center gap-2">

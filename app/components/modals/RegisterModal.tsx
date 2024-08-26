@@ -52,7 +52,7 @@ const RegisterModal = () => {
       .then(() => {
         toast.success("Registration successful. Please log in.");
         registerModal.onClose();
-        loginModal.onOpen(); // Optionally open login modal
+        loginModal.onOpen();
       })
       .catch((error) => {
         toast.error("Something went wrong!");
