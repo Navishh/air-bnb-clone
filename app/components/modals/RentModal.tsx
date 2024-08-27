@@ -250,6 +250,58 @@ const RentModal = () => {
       });
   };
 
+  // const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+  //   try {
+  //     const response = await fetch("/api/listings", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       throw new Error(errorData.error || "Something went wrong");
+  //     }
+
+  //     const result = await response.json();
+  //     toast.success("Listing Created!");
+  //     router.refresh();
+  //     reset();
+  //     setStep(0);
+  //     rentModal.onClose();
+  //   } catch (error) {
+  //     console.error("Error creating listing:", error);
+  //     toast.error("Something went wrong!");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+  // const onSubmit = async (data) => {
+  //   try {
+  //     const response = await fetch('/api/listings', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       throw new Error(errorData.error || 'Something went wrong');
+  //     }
+
+  //     const result = await response.json();
+  //     console.log('Listing created:', result);
+  //   } catch (error) {
+  //     console.error('Error creating listing:', error);
+  //     alert(error.message);
+  //   }
+  // };
+
   const actionLabel = useMemo(() => {
     if (step == STEPS.PRICE) {
       return "Create";
