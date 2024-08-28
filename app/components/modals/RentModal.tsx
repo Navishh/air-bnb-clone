@@ -226,6 +226,30 @@ const RentModal = () => {
     setStep((value) => value + 1);
   };
 
+  // const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  //   if (step != STEPS.PRICE) {
+  //     return onNext();
+  //   }
+
+  //   setIsLoading(true);
+
+  //   axios
+  //     .post("/api/listings/route.ts", data)
+  //     .then(() => {
+  //       toast.success("Listing Created!");
+  //       router.refresh();
+  //       reset();
+  //       setStep(STEPS.CATEGORY);
+  //       rentModal.onClose();
+  //     })
+  //     .catch(() => {
+  //       toast.error("Something went wrong!");
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step != STEPS.PRICE) {
       return onNext();
@@ -234,7 +258,11 @@ const RentModal = () => {
     setIsLoading(true);
 
     axios
-      .post("/api/listings", data)
+      .post("/api/listings", {
+        ...data,
+        ImageSrc: data.imageSrc, // Ensure correct key casing
+        bathRoomCount: data.bathroomCount, // Consistency in naming
+      })
       .then(() => {
         toast.success("Listing Created!");
         router.refresh();
@@ -242,7 +270,8 @@ const RentModal = () => {
         setStep(STEPS.CATEGORY);
         rentModal.onClose();
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Error creating listing:", error); // Log error details
         toast.error("Something went wrong!");
       })
       .finally(() => {
