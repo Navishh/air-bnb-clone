@@ -53,9 +53,13 @@ const LoginModal = () => {
       }
 
       //if error
-      if (callback?.error) {
-        toast.error(callback.error);
-      }
+      // if (callback?.error) {
+      //   toast.error(callback.error);
+      // }
+      // if (callback?.error) {
+      //   console.error("Sign in error:", callback.error); // Log the exact error message
+      //   toast.error(callback.error); // Display the error in a toast
+      // }
     });
   };
 
